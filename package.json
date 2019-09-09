@@ -83,12 +83,12 @@
 				"pandoc.type.beamer.documentclass": {
 					"type": "string",
 					"default": "ctexbeamer",
-					"description": "演示文稿的文档类"
+					"description": "演示的文档类"
 				},
 				"pandoc.type.beamer.others": {
 					"type": "string",
 					"default": "",
-					"description": "演示文稿的其他选项"
+					"description": "演示的其他选项"
 				},
 				"pandoc.type.report.documentclass": {
 					"type": "string",
