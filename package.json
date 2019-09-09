@@ -1,0 +1,122 @@
+{
+	"name": "pandoc-for-markdown",
+	"displayName": "Pandoc for Markdown",
+	"description": "将 Markdown 渲染为 LaTeX 文档",
+	"version": "0.0.2",
+	"publisher": "tansongchen",
+	"icon": "icon.png",
+	"license": "SEE LICENSE",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tansongchen/pandoc-for-markdown.git"
+	},
+	"homepage": "https://github.com/tansongchen/pandoc-for-markdown/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/tansongchen/pandoc-for-markdown/issues",
+		"email": "tansongchen@pku.edu.cn"
+	},
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "Pandoc 参数设置",
+			"type": "object",
+			"properties": {
+				"pandoc.engine": {
+					"type": "string",
+					"default": "xelatex",
+					"enum": [
+						"xelatex",
+						"pdflatex",
+						"lualatex"
+					],
+					"description": "LaTeX 排版引擎"
+				},
+				"pandoc.metadata.title": {
+					"type": "string",
+					"default": "",
+					"description": "标题"
+				},
+				"pandoc.metadata.titleUseFilename": {
+					"type": "boolean",
+					"default": "true",
+					"description": "使用文件名作为标题"
+				},
+				"pandoc.metadata.author": {
+					"type": "string",
+					"default": "",
+					"description": "作者"
+				},
+				"pandoc.metadata.date": {
+					"type": "string",
+					"default": "",
+					"description": "日期"
+				},
+				"pandoc.metadata.dateUseToday": {
+					"type": "boolean",
+					"default": "true",
+					"description": "使用今天作为日期"
+				},
+				"pandoc.enumerate": {
+					"type": "boolean",
+					"default": "true",
+					"description": "使用数字编号"
+				},
+				"pandoc.type.article.documentclass": {
+					"type": "string",
+					"default": "ctexart",
+					"description": "文章的文档类"
+				},
+				"pandoc.type.article.others": {
+					"type": "string",
+					"default": "",
+					"description": "文章的其他选项"
+				},
+				"pandoc.type.beamer.documentclass": {
+					"type": "string",
+					"default": "ctexbeamer",
+					"description": "演示文稿的文档类"
+				},
+				"pandoc.type.beamer.others": {
+					"type": "string",
+					"default": "",
+					"description": "演示文稿的其他选项"
+				},
+				"pandoc.type.report.documentclass": {
+					"type": "string",
+					"default": "ctexrep",
+					"description": "报告的文档类"
+				},
+				"pandoc.type.report.others": {
+					"type": "string",
+					"default": "",
+					"description": "报告的其他选项"
+				},
+				"pandoc.type.book.documentclass": {
+					"type": "string",
+					"default": "ctexbook",
+					"description": "书籍的文档类"
+				},
+				"pandoc.type.book.others": {
+					"type": "string",
+					"default": "",
+					"description": "书籍的其他选项"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "pandoc.render",
+				"title": "Pandoc 渲染"
+			}
+		]
+	}
+}
